@@ -1,0 +1,143 @@
+@import "../../variables.scss";
+@import "../../responsivness.scss";
+.works {
+  position: relative;
+  background: rgb(71, 23, 246);
+  background: linear-gradient(
+    0deg,
+    rgba(71, 23, 246, 1) 0%,
+    rgba(14, 11, 22, 1) 92%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  .slider-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 20px;
+    .slider-thumbnail {
+      height: 20px;
+      width: 20px;
+      background-color: $dark;
+      border-radius: 50%;
+      transition: all 0.4s ease-in;
+      margin: 10px;
+      cursor: pointer;
+      &.current {
+        background-color: $yellow;
+      }
+    }
+  }
+  .arrows {
+    position: absolute;
+    font-size: 70px;
+    cursor: pointer;
+    color: $yellow;
+    @include mobile {
+      font-size: 35px;
+    }
+  }
+  & .arrow-right {
+    right: 100px;
+    @include mobile {
+      right: 0;
+    }
+  }
+  & .arrow-left {
+    left: 100px;
+    @include mobile {
+      left: 0;
+    }
+  }
+  h1 {
+    font-size: 67px;
+    color: $white;
+    align-self: start;
+  }
+  .slider {
+    height: 400px;
+    display: flex;
+    position: absolute;
+    left: 0;
+    transition: all 0.7s ease-out;
+    .container {
+      width: 100vw;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .item {
+        width: 750px;
+        height: 100%;
+        // display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 35px;
+        overflow: hidden;
+        position: relative;
+        box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px,
+          rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
+          rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+        @include mobile {
+          width: 250px;
+          height: 200px;
+          overflow: none;
+        }
+        .left {
+          position: absolute;
+          background-color: #0c0325f6;
+          height: inherit;
+          width: 300px;
+          display: flex;
+          flex-flow: column;
+          justify-content: space-around;
+          align-items: center;
+          color: $white;
+          font-weight: 300;
+          font-size: 18px;
+          z-index: 10;
+          padding: 8px;
+          @include mobile {
+            width: 40%;
+          }
+
+          .project-title {
+            font-size: 20px;
+            color: $yellow;
+            font-weight: 600;
+            @include mobile {
+              display: block;
+              font-size: 12px;
+            }
+          }
+          span {
+            font-size: 13.5px;
+            @include mobile {
+              display: none;
+            }
+          }
+          .links {
+            a {
+              text-decoration: none;
+              color: $yellow;
+              margin: 5px;
+            }
+          }
+        }
+        img {
+          // object-fit: cover;
+          height: 110%;
+          width: 110%;
+          transform: rotate(-6deg);
+          @include mobile {
+            transform: none;
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+    }
+  }
+}
